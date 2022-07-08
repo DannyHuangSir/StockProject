@@ -1,0 +1,26 @@
+<div class="flex flex-wrap">
+  <div
+    class="flex flex-column flex-wrap p-2"
+    style="width: calc(100% / 3);"
+    *ngFor="let m of months"
+  >
+    <div class="calendar-header flex justify-content-center bg-blue-300">
+      {{ m.year }}
+      {{ monthNames[m.month] }}
+    </div>
+    <div
+      class="calendar-content flex flex-row flex-wrap p-1"
+      *ngFor="let w of m.weeks"
+      style="boder-bottborder-bottom: 1px solid red;"
+    >
+      <div
+        *ngFor="let d of w.week"
+        class="flex justify-content-center p-1"
+        style="width: calc(100% / 7);"
+      >
+        {{ d.date }}
+      </div>
+    </div>
+    <div class="calendar-footer"></div>
+  </div>
+</div>
